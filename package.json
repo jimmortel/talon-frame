@@ -1,0 +1,8 @@
+{
+  "name": "talon-frame",
+  "version": "1.0.0",
+  "dependencies": {
+    "frog": "latest",
+    "viem": "latest"
+  }
+}

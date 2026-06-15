@@ -3,7 +3,8 @@ import { neynar } from 'frog/hubs'
 import { parseEther } from 'viem'
 
 export const app = new Frog({
-  hub: neynar({ apiKey: '6CDD2246-9B27-4081-9B2A-1F77C4F52FD8' }),
+  // Utilisation de la variable sécurisée que vous avez configurée sur Vercel
+  hub: neynar({ apiKey: process.env.NEYNAR_API_KEY as string }),
 })
 
 const BOOST_AMOUNT = '0.0001'
@@ -27,7 +28,7 @@ app.frame('/', (c) => {
 app.transaction('/boost', (c) => {
   return c.contract({
     abi: [], 
-    chainId: 'eip155:8453',
+    chainId: 'eip155:8453', // Base Mainnet
     functionName: 'transfer',
     to: DEVELOPER_ADDRESS as `0x${string}`,
     value: parseEther(BOOST_AMOUNT),

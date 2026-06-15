@@ -1,9 +1,11 @@
-import { Frog } from 'frog'
+import { Frog, Button } from 'frog'
 import { neynar } from 'frog/hubs'
 import { parseEther } from 'viem'
 
+const apiKey = (process.env.NEYNAR_API_KEY as string) || ''
+
 export const app = new Frog({
-  hub: neynar({ apiKey: process.env.NEYNAR_API_KEY as string }),
+  hub: neynar({ apiKey }),
   title: 'TALON Frame',
 })
 
@@ -18,8 +20,8 @@ app.frame('/', (c) => {
       </div>
     ),
     intents: [
-      <c.Button action="/checkin">Check-in</c.Button>,
-      <c.Button.Transaction target="/boost">Boost</c.Button.Transaction>
+      <Button action="/checkin">Check-in</Button>,
+      <Button.Transaction target="/boost">Boost</Button.Transaction>
     ],
   })
 })

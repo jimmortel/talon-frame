@@ -3,7 +3,7 @@ import { neynar } from 'frog/hubs'
 import { parseEther } from 'viem'
 
 export const app = new Frog({
-  hub: neynar({ apiKey: 'NEYNAR_API_KEY' }),
+  hub: neynar({ apiKey: '6CDD2246-9B27-4081-9B2A-1F77C4F52FD8' }),
 })
 
 const BOOST_AMOUNT = '0.0001'

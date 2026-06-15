@@ -4,6 +4,7 @@ import { parseEther } from 'viem'
 
 export const app = new Frog({
   hub: neynar({ apiKey: process.env.NEYNAR_API_KEY as string }),
+  title: 'TALON Frame',
 })
 
 const BOOST_AMOUNT = '0.0001'
@@ -12,14 +13,13 @@ const DEVELOPER_ADDRESS = '0x872bD846596Cc1aEde8Fd800997d242e3473fA83'
 app.frame('/', (c) => {
   return c.res({
     image: (
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '50px' }}>
-        <h1 style={{ fontSize: '60px' }}>TALON Dashboard</h1>
-        <p style={{ fontSize: '30px' }}>Collect points and secure your VIP access.</p>
+      <div style={{ display: 'flex', fontSize: 60, color: 'white' }}>
+        TALON Dashboard
       </div>
     ),
     intents: [
-      <c.Button action="/checkin">Daily Check-in (+10)</c.Button>,
-      <c.Button.Transaction target="/boost">Boost Score (+50)</c.Button.Transaction>
+      <c.Button action="/checkin">Check-in</c.Button>,
+      <c.Button.Transaction target="/boost">Boost</c.Button.Transaction>
     ],
   })
 })

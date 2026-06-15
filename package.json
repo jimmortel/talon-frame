@@ -2,15 +2,9 @@
   "name": "talon-frame",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "build": "frog build"
   },
   "dependencies": {
-    "frog": "latest",
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "viem": "latest"
+    "frog": "latest"
   }
 }

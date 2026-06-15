@@ -1,3 +1,10 @@
 {
-  "rewrites": [{ "source": "/api/(.*)", "destination": "/api/index.tsx" }]
+  "buildCommand": "npx frog build",
+  "outputDirectory": ".frog",
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/index.tsx"
+    }
+  ]
 }
